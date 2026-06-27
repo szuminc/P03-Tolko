@@ -1,15 +1,9 @@
-// ── Service worker ────────────────────────────────────────────────────────
+﻿// ── Service worker ────────────────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js')
       .catch(err => console.warn('SW failed:', err));
-    // When a new SW takes over, show a user-controlled reload toast
-    navigator.serviceWorker.addEventListener('controllerchange', showUpdateToast);
   });
-}
-
-function showUpdateToast() {
-  document.getElementById('update-toast')?.classList.add('visible');
 }
 
 // ── Router ────────────────────────────────────────────────────────────────

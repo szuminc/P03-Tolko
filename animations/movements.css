@@ -1,4 +1,4 @@
-/* ── Shared SVG figure styles ──────────────────────────────────────────────── */
+﻿/* ── Shared SVG figure styles ──────────────────────────────────────────────── */
 .movement-svg {
   width: 100%;
   height: 100%;
@@ -6,34 +6,30 @@
   overflow: visible;
 }
 
-/* ── Abs — torso curls up ─────────────────────────────────────────────────── */
+/* ── Abs — upper body crunches toward hips ────────────────────────────────── */
 @keyframes abs-crunch {
   0%, 100% { transform: rotate(0deg); }
-  40%, 60% { transform: rotate(-28deg); }
+  40%, 60% { transform: rotate(-34deg); }
 }
-.anim-abs .anim-abs-torso {
-  transform-origin: 44px 38px;
-  animation: abs-crunch 2s ease-in-out infinite;
-}
-.anim-abs .anim-abs-head {
-  transform-origin: 44px 38px;
-  animation: abs-crunch 2s ease-in-out infinite;
+.anim-abs .anim-abs-upper {
+  transform-origin: 46px 48px;
+  animation: abs-crunch 2.2s ease-in-out infinite;
 }
 
-/* ── Four-point rotation — arm sweeps ─────────────────────────────────────── */
+/* ── Four-point rotation — arm sweeps overhead ────────────────────────────── */
 @keyframes four-point-arm {
   0%, 100% { transform: rotate(0deg); }
-  45%, 55% { transform: rotate(-50deg); }
+  45%, 55% { transform: rotate(-60deg); }
 }
 .anim-four-point .anim-four-point-arm {
-  transform-origin: 65px 31px;
-  animation: four-point-arm 2.5s ease-in-out infinite;
+  transform-origin: 66px 27px;
+  animation: four-point-arm 2.8s ease-in-out infinite;
 }
 
 /* ── Hip flexor — hips drive forward ─────────────────────────────────────── */
 @keyframes hip-forward {
   0%, 100% { transform: translateX(0); }
-  40%, 60% { transform: translateX(6px); }
+  40%, 60% { transform: translateX(8px); }
 }
 .anim-hip-flexor .anim-hip-flexor-figure {
   animation: hip-forward 2.5s ease-in-out infinite;
@@ -45,43 +41,42 @@
   50%       { transform: scaleY(0.96); }
 }
 .anim-plank .anim-plank-figure {
-  transform-origin: 50px 45px;
-  animation: plank-breathe 3s ease-in-out infinite;
+  transform-origin: 50px 40px;
+  animation: plank-breathe 3.5s ease-in-out infinite;
 }
 
-/* ── Glute bridge — hips raise ───────────────────────────────────────────── */
+/* ── Glute bridge — hips rise ────────────────────────────────────────────── */
 @keyframes bridge-lift {
   0%, 100% { transform: translateY(0); }
-  40%, 60% { transform: translateY(-10px); }
+  40%, 60% { transform: translateY(-13px); }
 }
 .anim-glute-bridge .anim-glute-bridge-hips {
-  animation: bridge-lift 2s ease-in-out infinite;
+  animation: bridge-lift 2.2s ease-in-out infinite;
 }
 
-/* ── Bird dog — hold extended position, then pulse ───────────────────────── */
+/* ── Bird dog — extended limbs pulse ─────────────────────────────────────── */
 @keyframes bird-dog-hold {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  40%, 60% { transform: translateY(-4px); opacity: 0.9; }
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  40%, 60% { transform: translateY(-5px); opacity: 1; }
 }
 .anim-bird-dog .anim-bird-dog-extend {
-  animation: bird-dog-hold 2.5s ease-in-out infinite;
+  animation: bird-dog-hold 2.8s ease-in-out infinite;
 }
 
 /* ── Dead bug — limbs lower toward floor ─────────────────────────────────── */
 @keyframes dead-bug-lower {
-  0%, 100% { transform: rotate(0deg); }
-  40%, 60% { transform: rotate(35deg); }
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(14px); }
 }
 .anim-dead-bug .anim-dead-bug-limbs {
-  transform-origin: 50px 40px;
-  animation: dead-bug-lower 2.5s ease-in-out infinite;
+  animation: dead-bug-lower 2.8s ease-in-out infinite;
 }
 
-/* ── Cat-cow — spine arches up and down ──────────────────────────────────── */
+/* ── Cat-cow — spine arches up (cat) and sags down (cow) ─────────────────── */
 @keyframes cat-cow-spine {
-  0%, 100% { d: path("M67,33 Q55,38 44,36 Q33,34 28,37"); }
-  40%, 60% { d: path("M67,33 Q55,26 44,28 Q33,30 28,37"); }
+  0%, 100% { d: path("M67,33 Q54,40 42,37 Q30,34 26,38"); }
+  40%, 60% { d: path("M67,33 Q54,22 42,25 Q30,28 26,38"); }
 }
 .anim-cat-cow .anim-cat-cow-spine {
-  animation: cat-cow-spine 2.5s ease-in-out infinite;
+  animation: cat-cow-spine 2.8s ease-in-out infinite;
 }
