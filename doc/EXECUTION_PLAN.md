@@ -1,4 +1,4 @@
-# Workout PWA — Execution Plan
+﻿# Workout PWA — Execution Plan
 
 ## Phases overview
 
@@ -138,6 +138,9 @@ Tasks:
 - [x] SW cache bumped v39 → v40
 - [x] Test all flows on iPad/iPhone Safari — confirmed working
 - [x] Audio verified on both iPad and iPhone
+- [x] Deployed to GitHub Pages — https://szuminc.github.io/P03-Tolko/
+- [x] Installed as PWA on iPhone from home screen — confirmed working
+- [x] SW cache auto-bumped to git SHA on every deploy (no manual version tracking)
 - [ ] Performance: 60fps animations, no timer jank (manual)
 - [ ] Final UX review on device (manual)
 
@@ -160,6 +163,30 @@ Tasks:
 ---
 
 ## Changelog
+
+### 2026-06-27 (continued — library expansion)
+- Movement library expanded from 8 → 31 movements
+  - Added 14 active movements: Push-Up, Squat, Side Plank, Superman, Cobra Stretch, Leg Raise, Mountain Climber, Seated Twist, Commando, Burpee, Caterpillar Walk, Jump Squat, High Knees, Jumping Jack
+  - Added 4 warmup movements: Pecs Stretch, Lats Stretch, Fire Hydrant, Anterior Deltoid
+  - Added 5 cooldown movements: Abs Stretch, Child's Pose, Downward Dog, Triceps Stretch, Glutes Stretch
+  - Cat-Cow re-tagged as warmup
+- Tag system implemented: movements carry `tags: ['warmup']` or `tags: ['cooldown']`
+  - Orange pill badge for warmup, blue pill for cooldown
+  - Tags render in library list, movement detail overlay, and routine builder picker
+- All SVG figures follow established style: filled accent head, thick strokes, joint dots, ground plane
+- Active/cardio movements use fast animation cycles (0.65–0.9s); stretches use slow cycles (3–4s)
+- New app icon designed and generated: bold lime stick figure in star/victory pose on dark background
+  - `doc/gen_icons.py` generates `icons/icon-192.png` and `icons/icon-512.png` via Pillow
+  - `doc/generate-icons.html` provides browser-based generator as fallback
+- SW cache bumped v47 → v48
+
+### 2026-06-27
+- Deployed to GitHub Pages: https://szuminc.github.io/P03-Tolko/
+- Repo made public to enable free GitHub Pages hosting
+- GitHub Actions workflow deploys P03-Tolko-Workout-PWA/ to gh-pages branch on every push to main
+- SW cache auto-bumped to git commit SHA in workflow — no manual version tracking needed
+- All PWA paths changed from absolute (/sw.js) to relative (./sw.js) for subpath hosting compatibility
+- PWA installed on iPhone from home screen — confirmed working offline-capable on HTTPS
 
 ### 2026-06-26 (continued — audio fix)
 - iPhone audio broken: AudioContext silently failed on iPhone while working on iPad
