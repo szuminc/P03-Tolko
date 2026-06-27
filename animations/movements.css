@@ -6,7 +6,7 @@
   overflow: visible;
 }
 
-/* ── Abs — upper body crunches toward hips ────────────────────────────────── */
+/* ── Abs ──────────────────────────────────────────────────────────────────── */
 @keyframes abs-crunch {
   0%, 100% { transform: rotate(0deg); }
   40%, 60% { transform: rotate(-34deg); }
@@ -16,7 +16,7 @@
   animation: abs-crunch 2.2s ease-in-out infinite;
 }
 
-/* ── Four-point rotation — arm sweeps overhead ────────────────────────────── */
+/* ── Four-point rotation ──────────────────────────────────────────────────── */
 @keyframes four-point-arm {
   0%, 100% { transform: rotate(0deg); }
   45%, 55% { transform: rotate(-60deg); }
@@ -26,7 +26,7 @@
   animation: four-point-arm 2.8s ease-in-out infinite;
 }
 
-/* ── Hip flexor — hips drive forward ─────────────────────────────────────── */
+/* ── Hip flexor ───────────────────────────────────────────────────────────── */
 @keyframes hip-forward {
   0%, 100% { transform: translateX(0); }
   40%, 60% { transform: translateX(8px); }
@@ -35,7 +35,7 @@
   animation: hip-forward 2.5s ease-in-out infinite;
 }
 
-/* ── Plank hold — subtle breathing pulse ─────────────────────────────────── */
+/* ── Plank hold ───────────────────────────────────────────────────────────── */
 @keyframes plank-breathe {
   0%, 100% { transform: scaleY(1); }
   50%       { transform: scaleY(0.96); }
@@ -45,7 +45,7 @@
   animation: plank-breathe 3.5s ease-in-out infinite;
 }
 
-/* ── Glute bridge — hips rise ────────────────────────────────────────────── */
+/* ── Glute bridge ─────────────────────────────────────────────────────────── */
 @keyframes bridge-lift {
   0%, 100% { transform: translateY(0); }
   40%, 60% { transform: translateY(-13px); }
@@ -54,7 +54,7 @@
   animation: bridge-lift 2.2s ease-in-out infinite;
 }
 
-/* ── Bird dog — extended limbs pulse ─────────────────────────────────────── */
+/* ── Bird dog ─────────────────────────────────────────────────────────────── */
 @keyframes bird-dog-hold {
   0%, 100% { transform: translateY(0); opacity: 0.85; }
   40%, 60% { transform: translateY(-5px); opacity: 1; }
@@ -63,7 +63,7 @@
   animation: bird-dog-hold 2.8s ease-in-out infinite;
 }
 
-/* ── Dead bug — limbs lower toward floor ─────────────────────────────────── */
+/* ── Dead bug ─────────────────────────────────────────────────────────────── */
 @keyframes dead-bug-lower {
   0%, 100% { transform: translateY(0); }
   40%, 60% { transform: translateY(14px); }
@@ -72,11 +72,144 @@
   animation: dead-bug-lower 2.8s ease-in-out infinite;
 }
 
-/* ── Cat-cow — spine arches up (cat) and sags down (cow) ─────────────────── */
+/* ── Cat-cow ──────────────────────────────────────────────────────────────── */
 @keyframes cat-cow-spine {
   0%, 100% { d: path("M67,33 Q54,40 42,37 Q30,34 26,38"); }
   40%, 60% { d: path("M67,33 Q54,22 42,25 Q30,28 26,38"); }
 }
 .anim-cat-cow .anim-cat-cow-spine {
   animation: cat-cow-spine 2.8s ease-in-out infinite;
+}
+
+/* ── Push-up ──────────────────────────────────────────────────────────────── */
+@keyframes pushup-dip {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(10px); }
+}
+.anim-pushup .anim-pushup-body {
+  animation: pushup-dip 2s ease-in-out infinite;
+}
+
+/* ── Squat ────────────────────────────────────────────────────────────────── */
+@keyframes squat-lower {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(15px); }
+}
+.anim-squat .anim-squat-upper {
+  animation: squat-lower 2.2s ease-in-out infinite;
+}
+
+/* ── Side plank ───────────────────────────────────────────────────────────── */
+@keyframes side-plank-breathe {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+.anim-side-plank .anim-side-plank-figure {
+  animation: side-plank-breathe 3.5s ease-in-out infinite;
+}
+
+/* ── Superman ─────────────────────────────────────────────────────────────── */
+@keyframes superman-lift {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-12px); }
+}
+.anim-superman .anim-superman-lift {
+  animation: superman-lift 2.5s ease-in-out infinite;
+}
+
+/* ── Cobra stretch ────────────────────────────────────────────────────────── */
+@keyframes cobra-rise {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-10px); }
+}
+.anim-cobra .anim-cobra-upper {
+  animation: cobra-rise 2.8s ease-in-out infinite;
+}
+
+/* ── Leg raise ────────────────────────────────────────────────────────────── */
+@keyframes leg-raise {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-38deg); }
+}
+.anim-leg-raise .anim-leg-raise-legs {
+  transform-origin: 46px 58px;
+  animation: leg-raise 2.2s ease-in-out infinite;
+}
+
+/* ── Mountain climber ─────────────────────────────────────────────────────── */
+@keyframes mountain-climber {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-35deg); }
+}
+.anim-mountain-climber .anim-mountain-climber-leg {
+  transform-origin: 36px 42px;
+  animation: mountain-climber 0.75s ease-in-out infinite;
+}
+
+/* ── Seated twist ─────────────────────────────────────────────────────────── */
+@keyframes seated-twist {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(22deg); }
+}
+.anim-seated-twist .anim-seated-twist-upper {
+  transform-origin: 42px 54px;
+  animation: seated-twist 2.8s ease-in-out infinite;
+}
+
+/* ── Commando ─────────────────────────────────────────────────────────────── */
+@keyframes commando-arm {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-32deg); }
+}
+.anim-commando .anim-commando-arm {
+  transform-origin: 72px 26px;
+  animation: commando-arm 1.4s ease-in-out infinite;
+}
+
+/* ── Burpee ───────────────────────────────────────────────────────────────── */
+@keyframes burpee-jump {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-14px); }
+}
+.anim-burpee .anim-burpee-figure {
+  animation: burpee-jump 0.9s ease-in-out infinite;
+}
+
+/* ── Caterpillar walk ─────────────────────────────────────────────────────── */
+@keyframes caterpillar-reach {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  40%, 60% { transform: translateY(-8px) rotate(-8deg); }
+}
+.anim-caterpillar .anim-caterpillar-figure {
+  transform-origin: 50px 64px;
+  animation: caterpillar-reach 2.5s ease-in-out infinite;
+}
+
+/* ── Jump squat ───────────────────────────────────────────────────────────── */
+@keyframes jump-squat {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-16px); }
+}
+.anim-jump-squat .anim-jump-squat-figure {
+  animation: jump-squat 0.9s ease-in-out infinite;
+}
+
+/* ── High knees ───────────────────────────────────────────────────────────── */
+@keyframes high-knees {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-32deg); }
+}
+.anim-high-knees .anim-high-knees-leg {
+  transform-origin: 50px 40px;
+  animation: high-knees 0.65s ease-in-out infinite;
+}
+
+/* ── Jumping jack ─────────────────────────────────────────────────────────── */
+@keyframes jumping-jack {
+  0%, 100% { transform: scaleX(0.3) scaleY(0.6); }
+  40%, 60% { transform: scaleX(1) scaleY(1); }
+}
+.anim-jumping-jack .anim-jumping-jack-limbs {
+  transform-origin: 50px 30px;
+  animation: jumping-jack 0.9s ease-in-out infinite;
 }
