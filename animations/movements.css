@@ -1,0 +1,87 @@
+/* ── Shared SVG figure styles ──────────────────────────────────────────────── */
+.movement-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* ── Abs — torso curls up ─────────────────────────────────────────────────── */
+@keyframes abs-crunch {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-28deg); }
+}
+.anim-abs .anim-abs-torso {
+  transform-origin: 44px 38px;
+  animation: abs-crunch 2s ease-in-out infinite;
+}
+.anim-abs .anim-abs-head {
+  transform-origin: 44px 38px;
+  animation: abs-crunch 2s ease-in-out infinite;
+}
+
+/* ── Four-point rotation — arm sweeps ─────────────────────────────────────── */
+@keyframes four-point-arm {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 55% { transform: rotate(-50deg); }
+}
+.anim-four-point .anim-four-point-arm {
+  transform-origin: 65px 31px;
+  animation: four-point-arm 2.5s ease-in-out infinite;
+}
+
+/* ── Hip flexor — hips drive forward ─────────────────────────────────────── */
+@keyframes hip-forward {
+  0%, 100% { transform: translateX(0); }
+  40%, 60% { transform: translateX(6px); }
+}
+.anim-hip-flexor .anim-hip-flexor-figure {
+  animation: hip-forward 2.5s ease-in-out infinite;
+}
+
+/* ── Plank hold — subtle breathing pulse ─────────────────────────────────── */
+@keyframes plank-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50%       { transform: scaleY(0.96); }
+}
+.anim-plank .anim-plank-figure {
+  transform-origin: 50px 45px;
+  animation: plank-breathe 3s ease-in-out infinite;
+}
+
+/* ── Glute bridge — hips raise ───────────────────────────────────────────── */
+@keyframes bridge-lift {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-10px); }
+}
+.anim-glute-bridge .anim-glute-bridge-hips {
+  animation: bridge-lift 2s ease-in-out infinite;
+}
+
+/* ── Bird dog — hold extended position, then pulse ───────────────────────── */
+@keyframes bird-dog-hold {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  40%, 60% { transform: translateY(-4px); opacity: 0.9; }
+}
+.anim-bird-dog .anim-bird-dog-extend {
+  animation: bird-dog-hold 2.5s ease-in-out infinite;
+}
+
+/* ── Dead bug — limbs lower toward floor ─────────────────────────────────── */
+@keyframes dead-bug-lower {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(35deg); }
+}
+.anim-dead-bug .anim-dead-bug-limbs {
+  transform-origin: 50px 40px;
+  animation: dead-bug-lower 2.5s ease-in-out infinite;
+}
+
+/* ── Cat-cow — spine arches up and down ──────────────────────────────────── */
+@keyframes cat-cow-spine {
+  0%, 100% { d: path("M67,33 Q55,38 44,36 Q33,34 28,37"); }
+  40%, 60% { d: path("M67,33 Q55,26 44,28 Q33,30 28,37"); }
+}
+.anim-cat-cow .anim-cat-cow-spine {
+  animation: cat-cow-spine 2.5s ease-in-out infinite;
+}
