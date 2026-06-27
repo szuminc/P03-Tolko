@@ -1,4 +1,4 @@
-﻿# Workout PWA — Execution Plan
+# Workout PWA — Execution Plan
 
 ## Phases overview
 
