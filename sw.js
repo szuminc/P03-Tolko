@@ -1,4 +1,4 @@
-﻿const CACHE = 'tolko-v47';
+﻿const CACHE = 'tolko-v48';
 const SHELL = [
   './',
   './index.html',

@@ -68,10 +68,12 @@ function renderLibrary() {
   movements.forEach(m => {
     const card = document.createElement('div');
     card.className = 'movement-card';
+    const tagHtml = (m.tags || []).map(t => `<span class="movement-tag ${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join('');
     card.innerHTML = `
       <div class="movement-anim-wrap">${m.svg}</div>
       <div class="movement-card-info">
         <p class="movement-card-name">${m.name}</p>
+        ${tagHtml ? `<div class="movement-card-tags">${tagHtml}</div>` : ''}
         <p class="movement-card-meta">${m.defaultDuration}s · ${m.defaultReps} set${m.defaultReps > 1 ? 's' : ''}</p>
       </div>
       <svg class="movement-card-chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
@@ -88,6 +90,8 @@ function showMovementDetail(m) {
   overlay.querySelector('.detail-anim').innerHTML = m.svg;
   overlay.querySelector('.detail-meta').textContent =
     `Default: ${m.defaultDuration}s · ${m.defaultReps} set${m.defaultReps > 1 ? 's' : ''}`;
+  const tagsEl = overlay.querySelector('.detail-tags');
+  if (tagsEl) tagsEl.innerHTML = (m.tags || []).map(t => `<span class="movement-tag ${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join('');
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -653,6 +657,7 @@ function openMovementPicker() {
       <div class="picker-item-thumb">${m.svg}</div>
       <div class="picker-item-info">
         <p class="picker-item-name">${m.name}</p>
+        ${(m.tags || []).length ? `<div class="movement-card-tags">${(m.tags || []).map(t => `<span class="movement-tag ${t}">${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join('')}</div>` : ''}
         <p class="picker-item-meta">${m.defaultDuration}s · ${m.defaultReps} set${m.defaultReps > 1 ? 's' : ''}</p>
       </div>
       <svg class="picker-add-icon" viewBox="0 0 24 24">

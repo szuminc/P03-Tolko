@@ -213,3 +213,89 @@
   transform-origin: 50px 30px;
   animation: jumping-jack 0.9s ease-in-out infinite;
 }
+
+/* ── Pecs stretch ─────────────────────────────────────────────────────────── */
+@keyframes pecs-open {
+  0%, 100% { transform: scaleX(1); }
+  40%, 60% { transform: scaleX(1.06); }
+}
+.anim-pecs .anim-pecs-figure {
+  transform-origin: 50px 36px;
+  animation: pecs-open 3s ease-in-out infinite;
+}
+
+/* ── Lats stretch ─────────────────────────────────────────────────────────── */
+@keyframes lats-lean {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(7deg); }
+}
+.anim-lats .anim-lats-figure {
+  transform-origin: 48px 44px;
+  animation: lats-lean 3s ease-in-out infinite;
+}
+
+/* ── Fire hydrant ─────────────────────────────────────────────────────────── */
+@keyframes fire-hydrant {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-35deg); }
+}
+.anim-fire-hydrant .anim-fire-hydrant-leg {
+  transform-origin: 36px 38px;
+  animation: fire-hydrant 2s ease-in-out infinite;
+}
+
+/* ── Anterior deltoid stretch ─────────────────────────────────────────────── */
+@keyframes ant-delt-pull {
+  0%, 100% { transform: rotate(0deg); }
+  40%, 60% { transform: rotate(-18deg); }
+}
+.anim-ant-delt .anim-ant-delt-arm {
+  transform-origin: 56px 24px;
+  animation: ant-delt-pull 3s ease-in-out infinite;
+}
+
+/* ── Abs stretch ──────────────────────────────────────────────────────────── */
+@keyframes abs-stretch-reach {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-6px); }
+}
+.anim-abs-stretch .anim-abs-stretch-figure {
+  animation: abs-stretch-reach 3s ease-in-out infinite;
+}
+
+/* ── Child's pose ─────────────────────────────────────────────────────────── */
+@keyframes child-pose-sink {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+.anim-child-pose .anim-child-pose-figure {
+  animation: child-pose-sink 4s ease-in-out infinite;
+}
+
+/* ── Downward dog ─────────────────────────────────────────────────────────── */
+@keyframes downward-dog-lift {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-7px); }
+}
+.anim-downward-dog .anim-downward-dog-figure {
+  transform-origin: 52px 20px;
+  animation: downward-dog-lift 3.5s ease-in-out infinite;
+}
+
+/* ── Triceps stretch ──────────────────────────────────────────────────────── */
+@keyframes triceps-pulse {
+  0%, 100% { transform: translateY(0); }
+  40%, 60% { transform: translateY(-4px); }
+}
+.anim-triceps .anim-triceps-figure {
+  animation: triceps-pulse 3s ease-in-out infinite;
+}
+
+/* ── Glutes stretch ───────────────────────────────────────────────────────── */
+@keyframes glutes-pull {
+  0%, 100% { transform: translateX(0); }
+  40%, 60% { transform: translateX(7px); }
+}
+.anim-glutes-stretch .anim-glutes-legs {
+  animation: glutes-pull 3.5s ease-in-out infinite;
+}
