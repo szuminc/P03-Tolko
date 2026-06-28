@@ -1,4 +1,4 @@
-﻿const movements = [
+const movements = [
   {
     id: 'abs',
     name: 'Abs',

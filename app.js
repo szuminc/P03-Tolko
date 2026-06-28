@@ -1,4 +1,4 @@
-﻿// ── Service worker ────────────────────────────────────────────────────────
+// ── Service worker ────────────────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js')
@@ -51,6 +51,7 @@ function backfillMilestones() {
 
 window.addEventListener('hashchange', applyRoute);
 window.addEventListener('DOMContentLoaded', () => {
+  seedDefaultRoutines();
   backfillMilestones();
   const saved = loadMilestoneData().activeTheme;
   if (saved) applyTheme(saved);
@@ -99,6 +100,71 @@ function showMovementDetail(m) {
 function closeMovementDetail() {
   document.getElementById('movement-detail').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+// ── Default routines ──────────────────────────────────────────────────────
+const DEFAULT_ROUTINES = [
+  {
+    id: 'default-core',
+    name: 'Core Foundation',
+    createdAt: '2026-06-27T00:00:00Z',
+    movements: [
+      { movementId: 'cat-cow',            duration: 30, reps: 2 },
+      { movementId: 'pecs-stretch',       duration: 30, reps: 2 },
+      { movementId: 'lats-stretch',       duration: 30, reps: 2 },
+      { movementId: 'dead-bug',           duration: 30, reps: 3 },
+      { movementId: 'bird-dog',           duration: 20, reps: 3 },
+      { movementId: 'abs',                duration: 30, reps: 3 },
+      { movementId: 'leg-raise',          duration: 30, reps: 3 },
+      { movementId: 'plank-hold',         duration: 30, reps: 3 },
+      { movementId: 'seated-twist',       duration: 30, reps: 2 },
+      { movementId: 'abs-stretch',        duration: 30, reps: 2 },
+      { movementId: 'child-pose',         duration: 40, reps: 1 },
+      { movementId: 'downward-dog',       duration: 40, reps: 1 },
+    ]
+  },
+  {
+    id: 'default-glute',
+    name: 'Glute & Posterior Chain',
+    createdAt: '2026-06-27T00:00:00Z',
+    movements: [
+      { movementId: 'fire-hydrant',       duration: 30, reps: 3 },
+      { movementId: 'cat-cow',            duration: 30, reps: 2 },
+      { movementId: 'glute-bridge',       duration: 30, reps: 3 },
+      { movementId: 'bird-dog',           duration: 20, reps: 3 },
+      { movementId: 'superman',           duration: 30, reps: 3 },
+      { movementId: 'side-plank',         duration: 30, reps: 3 },
+      { movementId: 'hip-flexor',         duration: 30, reps: 3 },
+      { movementId: 'squat',              duration: 30, reps: 3 },
+      { movementId: 'glutes-stretch',     duration: 40, reps: 2 },
+      { movementId: 'child-pose',         duration: 40, reps: 1 },
+      { movementId: 'downward-dog',       duration: 40, reps: 1 },
+    ]
+  },
+  {
+    id: 'default-cardio',
+    name: 'Cardio Burn',
+    createdAt: '2026-06-27T00:00:00Z',
+    movements: [
+      { movementId: 'jumping-jack',       duration: 30, reps: 2 },
+      { movementId: 'caterpillar-walk',   duration: 30, reps: 2 },
+      { movementId: 'burpee',             duration: 30, reps: 3 },
+      { movementId: 'jump-squat',         duration: 20, reps: 3 },
+      { movementId: 'mountain-climber',   duration: 30, reps: 3 },
+      { movementId: 'high-knees',         duration: 30, reps: 3 },
+      { movementId: 'commando',           duration: 30, reps: 3 },
+      { movementId: 'push-up',            duration: 30, reps: 3 },
+      { movementId: 'downward-dog',       duration: 40, reps: 1 },
+      { movementId: 'child-pose',         duration: 40, reps: 1 },
+      { movementId: 'abs-stretch',        duration: 30, reps: 2 },
+      { movementId: 'triceps-stretch',    duration: 30, reps: 2 },
+    ]
+  }
+];
+
+function seedDefaultRoutines() {
+  if (localStorage.getItem('tolko-routines') !== null) return;
+  persistRoutines(DEFAULT_ROUTINES);
 }
 
 // ── Storage helpers ───────────────────────────────────────────────────────

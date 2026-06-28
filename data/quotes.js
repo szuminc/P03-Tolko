@@ -1,4 +1,4 @@
-﻿const quotes = [
+const quotes = [
   "The impediment to action advances action. What stands in the way becomes the way.",
   "We suffer more often in imagination than in reality.",
   "He who has a why can endure almost any how.",
