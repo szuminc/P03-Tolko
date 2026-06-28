@@ -37,19 +37,15 @@ git stash pop
 
 ### After completing any phase
 
-Bump the service worker cache version in `sw.js` first, then commit and push:
+Commit and push — the SW cache version is bumped automatically by GitHub Actions on every deploy (set to the commit SHA). No manual version tracking needed.
 
 ```bash
-# 1. Bump cache version (tolko-v1 → v2 → v3 …)
-# Edit sw.js: const CACHE = 'tolko-vN';
-
-# 2. Commit and push
 git add .
 git commit -m "Phase X complete: brief description"
 git push
 ```
 
-Bumping the cache version forces the installed PWA to drop the old cache and fetch fresh files on next open — no reinstall needed.
+The installed PWA will show an "App updated — tap to reload" toast on next open.
 
 > **Do not reinstall** unless the manifest changes (app name, icon, display mode).
 
@@ -71,15 +67,20 @@ Never let the remote overwrite local work. The remote is empty until you push �
 
 ## File structure reference
 
+The git repo root is `P03-Tolko-Workout-PWA/` — this is a fully isolated repo, separate from other projects.
+
 ```
 /
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions: deploys to gh-pages on every push to main
 ├── index.html              # App shell + all screens
 ├── manifest.json           # PWA manifest
-├── sw.js                   # Service worker (cache-first)
+├── sw.js                   # Service worker (cache-first; version auto-bumped by CI)
 ├── style.css               # Global styles + CSS theme variables
-├── app.js                  # Routing + screen logic
+├── app.js                  # Routing + screen logic + default routines seed
 ├── data/
-│   ├── movements.js        # Movement library data
+│   ├── movements.js        # Movement library data (31 movements)
 │   └── quotes.js           # Daily quotes list
 ├── icons/
 │   ├── icon-192.png

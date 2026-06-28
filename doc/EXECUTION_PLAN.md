@@ -164,6 +164,19 @@ Tasks:
 
 ## Changelog
 
+### 2026-06-27 (continued — default routines, repo restructure, security)
+- Three default routines pre-loaded on first install via `seedDefaultRoutines()` in `app.js`
+  - Core Foundation (beginner): spine mobility warmup → Dead Bug, Bird Dog, Abs, Leg Raise, Plank Hold, Seated Twist → cooldown
+  - Glute & Posterior Chain (intermediate): Fire Hydrant + Cat-Cow warmup → Glute Bridge, Bird Dog, Superman, Side Plank, Hip Flexor, Squat → cooldown
+  - Cardio Burn (advanced): Jumping Jack + Caterpillar Walk warmup → Burpee, Jump Squat, Mountain Climber, High Knees, Commando, Push-Up → cooldown
+  - Seed only fires when `tolko-routines` key is absent from localStorage (first install only)
+- Git repo restructured: root moved from `Projects_szmn/` to `P03-Tolko-Workout-PWA/` — now a fully isolated repo
+- Deploy workflow replaced with `JamesIves/github-pages-deploy-action@v4` — resolves auth failure on `git push origin gh-pages`
+- Security incident resolved: hardcoded Google OAuth2 credentials (from unrelated portfolio project accidentally merged into this repo's history) detected by GitGuardian when repo briefly went public
+  - OAuth client deleted and rotated in Google Cloud Console
+  - `gdrive_audit.py` and all portfolio files scrubbed from git history via `git filter-repo`
+  - Repo returned to public after full history clean
+
 ### 2026-06-27 (continued — library expansion)
 - Movement library expanded from 8 → 31 movements
   - Added 14 active movements: Push-Up, Squat, Side Plank, Superman, Cobra Stretch, Leg Raise, Mountain Climber, Seated Twist, Commando, Burpee, Caterpillar Walk, Jump Squat, High Knees, Jumping Jack
